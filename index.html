@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Générateur de note d'Urbex</title>
+    <link rel="stylesheet" href="./index.css" crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <!-- Status -->
+    <label>Status :</label>
+    <select id="status" onchange="toggleRaisonStatus()"></select>
+    <textarea
+      id="raisonStatus"
+      placeholder="RAISON..."
+      style="display: none"
+    ></textarea>
+
+    <!-- Type -->
+    <label>Type :</label>
+    <select id="type" onchange="toggleTypeAutre()"></select>
+    <textarea
+      id="autreType"
+      placeholder="AUTRE..."
+      style="display: none"
+    ></textarea>
+
+    <!-- Abandon -->
+    <label>Abandon :</label>
+    <select id="abandon">
+      <option value="Abandon certain">Abandon certain</option>
+      <option value="Abandon incertain">Abandon incertain</option>
+    </select>
+
+    <!-- Risque -->
+    <label>Risque :</label>
+    <select id="risque" onchange="toggleRisqueRaison()"></select>
+    <textarea
+      id="raisonRisque"
+      placeholder="RAISON..."
+      style="display: none"
+    ></textarea>
+
+    <!-- Génération -->
+    <button onclick="genererTexte()">Générer</button>
+    <div id="resultBox" style="display: none">
+      <label>Résultat :</label>
+      <div id="outputDisplay"></div>
+      <textarea id="output" style="display: none"></textarea>
+      <button onclick="copierTexte()">Copier (Se copie automatiquement)</button>
+    </div>
+
+    <hr />
+
+    <!-- Options personnalisées -->
+    <label>Gérer les options personnalisées</label>
+    <select id="customOptionsList" size="6" style="width: 100%"></select>
+    <button id="deleteCustomBtn" disabled>Supprimer</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
