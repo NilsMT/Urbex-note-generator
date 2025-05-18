@@ -108,7 +108,7 @@ function genererTexte() {
     (text) => `Risqué : ${text}`
   );
 
-  const result = `[${status}]\n- ${type}\n- ${abandon}\n- ${risque}`;
+  const result = `${status}\n- ${type}\n- ${abandon}\n- ${risque}`;
   document.getElementById("outputDisplay").innerText = result;
   document.getElementById("output").value = result;
   document.getElementById("resultBox").style.display = "block";
@@ -176,11 +176,11 @@ function refreshCustomOptionsList() {
   select.innerHTML = "";
 
   // Récupère toutes les options custom depuis localStorage
-  const keys = ["type", "risque", "status"];
+  const keys = ["Type", "Risque", "Status"];
   const defMap = {
-    type: defaultTypes,
-    risque: defaultRisques,
-    status: defaultStatus,
+    Type: defaultTypes,
+    Risque: defaultRisques,
+    Status: defaultStatus,
   };
 
   keys.forEach((key) => {
@@ -190,7 +190,7 @@ function refreshCustomOptionsList() {
       if (!defMap[key].includes(item)) {
         const option = document.createElement("option");
         option.value = key + "||" + item; // concat pour identifier catégorie + valeur
-        option.textContent = `[${key}] ${item}`;
+        option.textContent = `${key} : "${item}"`;
         select.appendChild(option);
       }
     });
