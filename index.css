@@ -1,3 +1,4 @@
+/* General Body Styles */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -7,6 +8,7 @@ body {
   margin: auto;
 }
 
+/* General Element Styles */
 label,
 #resultBox {
   margin-top: 10px;
@@ -26,12 +28,23 @@ button {
   padding: 10px;
 }
 
-#output {
-  white-space: pre-line;
+/* Output Box Styles */
+#output,
+#outputDisplay {
+  white-space: pre-wrap;
   padding: 10px;
   border: 1px solid #ccc;
 }
 
+#output {
+  white-space: pre-line;
+}
+
+#outputDisplay {
+  margin-top: 10px;
+}
+
+/* Row Layout Styles */
 .row {
   display: flex;
   gap: 10px;
@@ -46,30 +59,26 @@ button {
   width: 100px;
 }
 
+/* Textarea Styles */
+textarea {
+  resize: none;
+}
+
+/* Horizontal Rule Styles */
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Select and Option Styles */
 option.special-option {
   background-color: #d1d1d1;
   font-style: italic;
   font-weight: bold;
 }
 
-textarea {
-  resize: none;
-}
-
-#outputDisplay {
-  white-space: pre-wrap;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-}
-
 option.warning-option {
-  background-color: #fff7b0; /* jaune clair */
+  background-color: #fff7b0; /* Light yellow */
   font-weight: bold;
-}
-
-hr {
-  margin: 20px 0;
-  border: none;
-  border-top: 1px solid #ccc;
 }

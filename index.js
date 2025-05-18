@@ -176,11 +176,11 @@ function refreshCustomOptionsList() {
   select.innerHTML = "";
 
   // Récupère toutes les options custom depuis localStorage
-  const keys = ["Type", "Risque", "Status"];
+  const keys = ["type", "risque", "status"];
   const defMap = {
-    Type: defaultTypes,
-    Risque: defaultRisques,
-    Status: defaultStatus,
+    type: defaultTypes,
+    risque: defaultRisques,
+    status: defaultStatus,
   };
 
   keys.forEach((key) => {
@@ -190,7 +190,9 @@ function refreshCustomOptionsList() {
       if (!defMap[key].includes(item)) {
         const option = document.createElement("option");
         option.value = key + "||" + item; // concat pour identifier catégorie + valeur
-        option.textContent = `${key} : "${item}"`;
+        option.textContent = `${
+          key.charAt(0).toUpperCase() + key.slice(1)
+        } : "${item}"`;
         select.appendChild(option);
       }
     });
