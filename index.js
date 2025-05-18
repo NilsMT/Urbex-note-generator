@@ -81,7 +81,12 @@ function populateSelect(id, values) {
 function toggleTextarea(selectId, textareaId, triggerValue) {
   const select = document.getElementById(selectId);
   const textarea = document.getElementById(textareaId);
-  textarea.style.display = select.value === triggerValue ? "block" : "none";
+  if (select.value === triggerValue) {
+    textarea.style.display = "block";
+    textarea.focus(); // 👈 Focus the textarea
+  } else {
+    textarea.style.display = "none";
+  }
 }
 
 function toggleRaisonStatus() {
