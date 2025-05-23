@@ -1,13 +1,14 @@
 <template>
     <header>
         <div id="flex-container">
-            <div class="material-symbols-outlined btn btn-normal" id="theme" @click="themeStore.toggleTheme">
-                {{ themeStore.isDarkMode ? 'dark_mode' : 'light_mode' }}
+            <div
+                class="material-symbols-outlined btn btn-normal"
+                id="theme"
+                @click="themeStore.toggleTheme"
+            >
+                {{ themeStore.currentIcon }}
             </div>
-
-            <slot></slot>
         </div>
-        
     </header>
 </template>
 
@@ -43,14 +44,14 @@ header {
 </style>
 
 <script>
-import { themeStore } from '../assets/js/themeStore.js'
+import { themeStore } from "../assets/js/themeStore.js";
 
 export default {
-    name: 'HeaderComp',
+    name: "HeaderComp",
     setup() {
         return {
             themeStore,
-        }
+        };
     },
-}
+};
 </script>

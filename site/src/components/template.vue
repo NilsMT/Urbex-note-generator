@@ -1,13 +1,10 @@
-<script setup lang="ts">
+<template></template>
+
+<style scoped></style>
+
+<script>
 export default {
-    name: 'TheTemplate',
-    components: {
-    },
-}
+    name: "TheTemplate",
+    components: {},
+};
 </script>
-
-<template>
-</template>
-
-<style scoped>
-</style>
