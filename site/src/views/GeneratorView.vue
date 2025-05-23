@@ -1,8 +1,8 @@
 <template>
     <div id="generator_cont">
-        <HeaderComp />
-
         <GeneratorComp class="section" />
+
+        <SettingsComp class="section" />
 
         <FooterComp />
     </div>
@@ -18,15 +18,14 @@
 
 <script>
 import FooterComp from "@/components/FooterComp.vue";
-import HeaderComp from "@/components/HeaderComp.vue";
 import GeneratorComp from "@/components/GeneratorComp.vue";
-import { ref } from "vue";
+import SettingsComp from "@/components/SettingsComp.vue";
 
 export default {
     components: {
         FooterComp,
-        HeaderComp,
         GeneratorComp,
+        SettingsComp,
     },
 };
 </script>

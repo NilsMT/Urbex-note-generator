@@ -32,7 +32,7 @@ footer {
 
 <script>
 import { ref } from "vue";
-import { debugStore } from "../assets/js/debugStore.js";
+import { debugStore } from "../assets/js/stores/debugStore.js";
 
 const currentYear = ref(new Date().getFullYear());
 

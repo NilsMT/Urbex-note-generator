@@ -51,7 +51,7 @@
 
 <script>
 import FooterComp from "../components/FooterComp.vue";
-import { themeStore } from "../assets/js/themeStore.js";
+import { themeStore } from "../assets/js/stores/themeStore.js";
 
 export default {
     components: {

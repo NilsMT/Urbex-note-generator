@@ -1,3 +1,10 @@
+/* DEBUG */
+
+:root.debug * {
+    outline: var(--accent) dotted 2px;
+    outline-offset: -2px;
+}
+
 /* DARK */
 
 :root.theme_dark {
@@ -20,6 +27,14 @@
 
 :root.theme_dark .btn-normal {
     background-color: var(--bg-light);
+}
+
+:root.theme_dark select,
+:root.theme_dark option,
+:root.theme_dark input,
+:root.theme_dark textarea,
+:root.theme_dark #resultDisplay {
+    color: var(--opptext);
 }
 
 /* LIGHT */

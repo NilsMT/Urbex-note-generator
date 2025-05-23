@@ -1,5 +1,5 @@
 import { reactive, ref } from "vue";
-import { ThemeConstant } from "./themeConstant";
+import { ThemeConstant } from "../constants/themeConstant";
 
 const DEFAULT_THEME = ThemeConstant.DARK;
 const THEME_KEY = "theme";

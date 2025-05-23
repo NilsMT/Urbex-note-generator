@@ -1,5 +1,5 @@
 import { reactive, ref } from "vue";
-import { DebugConstant } from "./debugConstant";
+import { DebugConstant } from "../constants/debugConstant";
 
 const DEFAULT_DEBUG_MODE = DebugConstant.DEBUG_DISABLED;
 const DEBUG_CLASS = "debug";

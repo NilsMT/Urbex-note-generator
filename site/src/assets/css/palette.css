@@ -7,27 +7,17 @@
     --text-size: 1.02em;
 }
 
-/* Debug */
-
-:root.debug * {
-    outline: var(--accent) dotted 2px;
-    outline-offset: -2px;
-}
-
 /* General */
 
 body {
     margin: 0px;
 
     background-color: var(--bg);
+
+    font-family: Arial, sans-serif;
 }
 
 * {
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-
     font-size: var(--text-size);
     color: var(--text);
 
@@ -88,6 +78,30 @@ h3 {
 sup,
 sub {
     font-size: calc(var(--text-size) / 1.5);
+}
+
+/* Inputs */
+
+select,
+textarea,
+input,
+#resultDisplay {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: var(--radius);
+
+    padding: calc(var(--padding) / 2);
+    width: fit-content;
+
+    border: solid 4px var(--bg-dark);
+}
+
+select:focus,
+textarea:focus,
+input:focus {
+    outline: none;
+    border: double 4px var(--bg-dark);
 }
 
 @media (max-width: 768px) {
