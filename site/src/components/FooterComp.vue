@@ -1,0 +1,64 @@
+<template>
+    <footer>
+        <div>
+            Made with 
+            <span class="material-symbols-outlined">
+                favorite
+            </span>
+            by NilsMT
+        </div>
+        <div @click="debugStore.toggleDebug" id="debug">
+            <span v-if="debugStore.isDebugMode" class="material-symbols-outlined">
+                bug_report
+            </span>
+
+            <span v-else>
+                |
+            </span>
+        </div>
+        <div>
+            © {{ currentYear }} NilsMT, Tous droits réservés
+        </div>
+    </footer>
+</template>
+
+<style scoped>
+footer {
+    z-index: 1;
+    padding: var(--padding);
+
+    background-color: var(--bg);
+    box-shadow: 0px 0px 20px #0005;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--gap);
+}
+
+#debug {
+    cursor: help;
+    
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>
+
+<script>
+import { ref } from 'vue'
+import { debugStore } from '../assets/js/debugStore.ts/index.js'
+
+const currentYear = ref(new Date().getFullYear())
+
+export default {
+    name: 'FooterComp',
+    setup() {   
+        return {
+            currentYear,
+            debugStore
+        }
+    },
+}
+</script>

@@ -1,0 +1,23 @@
+{
+  "name": "urbex-note-generator",
+  "version": "1.0.0",
+  "description": "Generate urbex notes for your google maps marker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NilsMT/Urbex-note-generator.git"
+  },
+  "keywords": [
+    "text-generator",
+    "urbex"
+  ],
+  "author": "NilsMT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NilsMT/Urbex-note-generator/issues"
+  },
+  "homepage": "https://github.com/NilsMT/Urbex-note-generator#readme"
+}

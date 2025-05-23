@@ -1,0 +1,106 @@
+@import url(./palette.css);
+
+/* Buttons */
+
+:root.dark .btn-normal {
+    background-color: var(--bg-light);
+}
+
+:root.light .btn-normal {
+    background-color: var(--bg-dark);
+}
+
+.btn-primary {
+    background-color: var(--transparent);
+    border: 5px solid var(--primary) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+}
+
+.btn-secondary {
+    background-color: var(--transparent);
+    border: 5px solid var(--secondary) !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+}
+
+.btn-accent {
+    background-color: var(--transparent);
+    border: 5px solid var(--accent) !important;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent);
+}
+
+
+.btn {
+    border-radius: var(--radius);
+
+    padding: calc(var(--padding) / 2);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: fit-content;
+
+    gap: var(--gap);
+
+    border: none;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:root.dark .btn:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+:root.light .btn:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+/* Text colors */
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+/* Sections */
+.section {
+    box-shadow: 0px 0px 20px #0005;
+    padding: 0px 20% var(--padding) 20%;
+}
+
+.section h2:not(#annee) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: var(--padding);
+    border-bottom: solid 1px var(--text);
+}
+
+@media (max-width: 500px) {
+    .section {
+        padding: 0px 1% var(--padding) 1%;
+    }
+}
