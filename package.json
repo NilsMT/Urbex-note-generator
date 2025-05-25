@@ -4,8 +4,11 @@
     "description": "Generate urbex notes for your google maps marker",
     "main": "index.js",
     "scripts": {
-        "build": "cd site && npm run build",
-        "start": "cd site && npm run dev"
+        "start:site": "cd site && npm run dev",
+        "build:site": "cd site && npm run build",
+        "build:extension": "cd extension && npm run build",
+        "install:site": "cd site && npm install",
+        "install:extension": "cd extension && npm install"
     },
     "repository": {
         "type": "git",

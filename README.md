@@ -33,11 +33,16 @@ Urbex-note-generator/
 │   │   └── router/         # Vue Router config
 │   └── ...
 ├── extension/      # Chrome extension (iframe wrapper)
-│   ├── index.html
-│   ├── manifest.json
-│   └── icon.png
-├── README.md
-└── package.json    # Project metadata and dependencies
+│   ├── dist/               # Build output
+│   ├── src/
+│   │   ├── index.html      # HTML file for the extension
+│   │   ├── manifest.json   # Chrome extension manifest
+│   │   └── icon.png        # Extension icon
+│   ├── build.js            # Build script
+│   └── ...
+├── README.md               # This file
+├── LICENSE                 # License file
+└── ...
 ```
 
 ---
@@ -46,8 +51,8 @@ Urbex-note-generator/
 
 ### Web App
 
-1. `npm install` or `npm i`
-2. `npm start`
+1. `npm run install:site`
+2. `npm run start :site`
 
 ### Chrome Extension
 
@@ -55,6 +60,11 @@ Urbex-note-generator/
 2. Enable "Developer mode"
 3. Click "Load unpacked" and select the `extension/` folder
 4. The extension will open the web app in a popup
+
+### Building for Production
+
+1. For the web app, run `npm run build:site`, the built files will be in the `site/dist/` folder
+2. For the Chrome extension, run `npm run install:extension` then `npm run build:extension`, the built files will be in the `extension/dist/` folder
 
 ---
 
