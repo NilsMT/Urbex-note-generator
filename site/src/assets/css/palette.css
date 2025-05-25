@@ -1,4 +1,5 @@
 @import url("./theme.css");
+@import url("./font.css");
 
 :root {
     --padding: 1rem;
@@ -23,8 +24,6 @@ body {
     margin: 0px;
 
     background-color: var(--bg);
-
-    font-family: Arial, sans-serif;
 }
 
 * {
@@ -32,6 +31,12 @@ body {
     color: var(--text);
 
     transition: all 0.3s ease, font-size 0s ease;
+}
+
+*:not(.material-icons):not(.material-icons-outlined):not(
+        .material-symbols-outlined
+    ) {
+    font-family: "OCRAExtended", sans-serif;
 }
 
 /* Links */
