@@ -1,4 +1,4 @@
-# Urbex Note Generator
+[![Urbex Note Generator](./img/banner.png)](https://urbex-note-generator.vercel.app)
 
 A web app and Chrome extension to quickly generate notes for commenting Urbex (urban exploration) locations.
 
