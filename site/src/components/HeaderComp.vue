@@ -1,13 +1,7 @@
 <template>
     <header>
         <!-- Thème -->
-        <div
-            class="material-symbols-outlined btn btn-normal"
-            id="theme"
-            @click="themeStore.toggleTheme"
-        >
-            {{ themeStore.currentIcon }}
-        </div>
+        <ThemeButtonComp id="theme"></ThemeButtonComp>
     </header>
 </template>
 
@@ -32,5 +26,5 @@ header {
 </style>
 
 <script setup>
-import { themeStore } from "@/assets/js/stores/themeStore";
+import ThemeButtonComp from "./ThemeButtonComp.vue";
 </script>

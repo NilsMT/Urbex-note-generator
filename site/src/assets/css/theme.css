@@ -14,10 +14,6 @@
 
     --text: #ffffff;
     --opptext: #000000;
-
-    --primary: #b339d1;
-    --secondary: #d98d00;
-    --accent: #0b750e;
 }
 
 :root.theme_dark .btn:hover {
@@ -47,10 +43,6 @@
 
     --text: #000000;
     --opptext: #ffffff;
-
-    --primary: #b14dd2;
-    --secondary: #d98d00;
-    --accent: #12a717;
 }
 
 :root.theme_light .btn:hover {
@@ -70,10 +62,6 @@
 
     --text: #000000;
     --opptext: #ffffff;
-
-    --primary: #12a717;
-    --secondary: #d98d00;
-    --accent: #0057d9;
 }
 
 :root.theme_pink .btn:hover {
@@ -93,10 +81,6 @@
 
     --text: #000000;
     --opptext: #ffffff;
-
-    --primary: #b14dd2;
-    --secondary: #0057d9;
-    --accent: #12a717;
 }
 
 :root.theme_cookie .btn:hover {
@@ -116,10 +100,6 @@
 
     --text: #000000;
     --opptext: #ffffff;
-
-    --primary: #b14dd2;
-    --secondary: #d98d00;
-    --accent: #12a717;
 }
 
 :root.theme_marine .btn:hover {

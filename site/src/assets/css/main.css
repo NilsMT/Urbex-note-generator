@@ -2,33 +2,6 @@
 
 /* Buttons */
 
-.btn-primary {
-    background-color: var(--transparent);
-    border: 5px solid var(--primary) !important;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary);
-}
-
-.btn-secondary {
-    background-color: var(--transparent);
-    border: 5px solid var(--secondary) !important;
-}
-
-.btn-secondary:hover {
-    background-color: var(--secondary);
-}
-
-.btn-accent {
-    background-color: var(--transparent);
-    border: 5px solid var(--accent) !important;
-}
-
-.btn-accent:hover {
-    background-color: var(--accent);
-}
-
 .btn-danger {
     background-color: var(--danger);
     border: 5px solid var(--danger-dark) !important;
@@ -55,20 +28,6 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-/* Text colors */
-
-.text-primary {
-    color: var(--primary);
-}
-
-.text-secondary {
-    color: var(--secondary);
-}
-
-.text-accent {
-    color: var(--accent);
 }
 
 /* Sections */
