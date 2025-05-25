@@ -2,9 +2,19 @@
 
 :root {
     --padding: 1rem;
+    --small-padding: calc(var(--padding) / 2);
     --radius: 10px;
     --gap: 1rem;
     --text-size: 1.02em;
+
+    --danger: #ff0000;
+    --danger-dark: #c30000;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --text-size: 0.95em;
+    }
 }
 
 /* General */
@@ -91,7 +101,7 @@ input,
     user-select: none;
     border-radius: var(--radius);
 
-    padding: calc(var(--padding) / 2);
+    padding: var(--small-padding);
     width: fit-content;
 
     border: solid 4px var(--bg-dark);

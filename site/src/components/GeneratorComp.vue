@@ -1,26 +1,9 @@
 <template>
     <div id="generator">
-        <!-- Thème -->
-        <div id="themeContainer">
-            <div>
-                Vous pouvez changer le thème ici
-                <span class="material-symbols-outlined"
-                    >keyboard_double_arrow_right</span
-                >
-            </div>
-            <div
-                class="material-symbols-outlined btn btn-normal"
-                id="theme"
-                @click="themeStore.toggleTheme"
-            >
-                {{ themeStore.currentIcon }}
-            </div>
-        </div>
-
         <h2>Générateur de note d'urbex</h2>
 
         <!-- Status -->
-        <label>Status :</label>
+        <label>Statut :</label>
         <select v-model="selectedStatus">
             <option
                 v-for="s in statusList"
@@ -31,11 +14,22 @@
                 {{ s }}
             </option>
         </select>
-        <input
-            v-if="generatorStore.isFake(selectedStatus)"
-            v-model="customStatus"
-            placeholder="Veuillez saisir une raison"
-        />
+        <div class="addCustomContainer">
+            <input
+                v-if="generatorStore.isFake(selectedStatus)"
+                v-model="customStatus"
+                placeholder="Veuillez saisir une raison"
+            />
+            <button
+                v-if="generatorStore.isFake(selectedStatus)"
+                class="material-symbols-outlined btn btn-normal add-btn"
+                @click="addCustomStatus"
+                :disabled="!customStatus"
+                type="button"
+            >
+                add
+            </button>
+        </div>
 
         <!-- Type -->
         <label>Type :</label>
@@ -55,11 +49,22 @@
                 {{ t }}
             </option>
         </select>
-        <input
-            v-if="generatorStore.isFake(selectedType)"
-            v-model="customType"
-            placeholder="Veuillez saisir un type"
-        />
+        <div class="addCustomContainer">
+            <input
+                v-if="generatorStore.isFake(selectedType)"
+                v-model="customType"
+                placeholder="Veuillez saisir un type"
+            />
+            <button
+                v-if="generatorStore.isFake(selectedType)"
+                class="material-symbols-outlined btn btn-normal add-btn"
+                @click="addCustomType"
+                :disabled="!customType"
+                type="button"
+            >
+                add
+            </button>
+        </div>
 
         <!-- Abandon -->
         <label>Abandon :</label>
@@ -92,11 +97,22 @@
                 {{ r }}
             </option>
         </select>
-        <input
-            v-if="generatorStore.isFake(selectedRisk)"
-            v-model="customRisk"
-            placeholder="Veuillez saisir un risque"
-        />
+        <div class="addCustomContainer">
+            <input
+                v-if="generatorStore.isFake(selectedRisk)"
+                v-model="customRisk"
+                placeholder="Veuillez saisir un risque"
+            />
+            <button
+                v-if="generatorStore.isFake(selectedRisk)"
+                class="material-symbols-outlined btn btn-normal add-btn"
+                @click="addCustomRisk"
+                :disabled="!customRisk"
+                type="button"
+            >
+                add
+            </button>
+        </div>
 
         <!-- Génération -->
         <button class="btn btn-normal" @click="generateNote">Générer</button>
@@ -127,24 +143,19 @@
 </template>
 
 <style scoped>
-#generator > *:not(input, #theme) {
+#generator > * {
     width: 100%;
 }
 
-#themeContainer {
+.addCustomContainer {
     display: flex;
     flex-direction: row;
     gap: var(--gap);
     align-items: center;
 }
 
-#theme {
-    width: min-content;
-    align-self: self-start;
-}
-
 input {
-    width: 80%;
+    width: 100%;
     align-self: self-start;
 }
 
@@ -197,23 +208,17 @@ input {
     width: min-content;
 }
 
-/* options */
-
-*.fake {
-    font-style: italic;
-    background-color: #c9c9c9;
-}
-
-*.unknown {
-    font-weight: bold;
-    background-color: #fff185;
+.add-btn {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    font-size: 1.5em;
+    padding: 0.2em 0.5em;
 }
 </style>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { generatorStore } from "../assets/js/stores/generatorStore.js";
-import { themeStore } from "../assets/js/stores/themeStore.js";
 
 const statusList = computed(() => generatorStore.status);
 const typeList = computed(() => generatorStore.type);
@@ -229,6 +234,22 @@ const customType = ref("");
 const customRisk = ref("");
 
 const result = ref("");
+
+function copyPaste() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(result.value).catch((err) => {
+            console.error("Échec de la copie", err);
+        });
+    } else {
+        // Fallback pour anciens navigateurs
+        const textarea = document.getElementById("output");
+        textarea.style.display = "block";
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        textarea.style.display = "none";
+    }
+}
 
 function generateNote() {
     if (generatorStore.isFake(selectedStatus.value) && customStatus.value) {
@@ -252,22 +273,45 @@ function generateNote() {
 - ${selectedAbandon.value}
 - ${selectedRisk.value}`;
 
-    this.copyPaste();
+    copyPaste();
 }
 
-function copyPaste() {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(this.result.value).catch((err) => {
-            console.error("Échec de la copie", err);
-        });
-    } else {
-        // Fallback pour anciens navigateurs
-        const textarea = document.getElementById("output");
-        textarea.style.display = "block";
-        textarea.select();
-        textarea.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        textarea.style.display = "none";
+function addCustomStatus() {
+    if (customStatus.value) {
+        let newSelection = generatorStore.addStatus(customStatus.value);
+        selectedStatus.value = newSelection;
+        customStatus.value = "";
     }
 }
+function addCustomType() {
+    if (customType.value) {
+        let newSelection = generatorStore.addType(customType.value);
+        selectedType.value = newSelection;
+        customType.value = "";
+    }
+}
+function addCustomRisk() {
+    if (customRisk.value) {
+        let newSelection = generatorStore.addRisk(customRisk.value);
+        selectedRisk.value = newSelection;
+        customRisk.value = "";
+    }
+}
+
+// Watch for list changes and reset selection if needed
+watch(statusList, (newList) => {
+    if (!newList.includes(selectedStatus.value)) {
+        selectedStatus.value = newList[0] || "";
+    }
+});
+watch(typeList, (newList) => {
+    if (!newList.includes(selectedType.value)) {
+        selectedType.value = newList[0] || "";
+    }
+});
+watch(riskList, (newList) => {
+    if (!newList.includes(selectedRisk.value)) {
+        selectedRisk.value = newList[0] || "";
+    }
+});
 </script>

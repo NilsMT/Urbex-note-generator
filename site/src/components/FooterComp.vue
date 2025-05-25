@@ -30,19 +30,9 @@ footer {
 }
 </style>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { debugStore } from "../assets/js/stores/debugStore.js";
 
 const currentYear = ref(new Date().getFullYear());
-
-export default {
-    name: "FooterComp",
-    setup() {
-        return {
-            currentYear,
-            debugStore,
-        };
-    },
-};
 </script>
