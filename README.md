@@ -14,7 +14,8 @@ A web app and Chrome extension to quickly generate notes for commenting Urbex (u
 -   Customizable types, status and risks
 -   Import/export custom items (via JSON or URL)
 -   Color themes (`light`, `dark`, `pink`, `cookie`, `marine`)
--   Chrome extension for quick access (NOTE: data from the web app is not shared with the extension)
+-   Chrome extension for quick access
+> Side note : data is not shared between the web app and the extension
 -   Responsive design for mobile and desktop
 
 ---
@@ -49,22 +50,41 @@ Urbex-note-generator/
 
 ## Getting Started
 
-### Web App
+For every following commands, you must be in the [root folder](./) of this repository
 
-1. `npm run install:site`
-2. `npm run start :site`
+### Running the project
+#### Web App
 
-### Chrome Extension
+1. `npm run install:site` if not already
+2. `npm run start:site`
 
-1. Go to `chrome://extensions/` in your browser
+#### Chrome Extension
+
+The process may vary depending on your web browser, the extension was designed to work on **Google Chrome**, under [Manifest V3](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
+
+##### From the Chrome Web Store
+
+1. Go to [the extension page](https://urbex-note-generator.vercel.app/WIP)
+2. Install the extension
+
+##### From this Repository
+
+1. Go to [chrome://extensions/](chrome://extensions/) in your browser
 2. Enable "Developer mode"
-3. Click "Load unpacked" and select the `extension/` folder
-4. The extension will open the web app in a popup
+3. Click "Load unpacked" and select the [extension/src/](./extension/src/) folder
+4. The extension is now installed
+> Side note n°1 : You would need to manually refresh the extension from the extension page if you updated it
+
+> Side note n°2 : There is no need of running the `npm run install:extension` command, as it's only used for building before uploading.
 
 ### Building for Production
 
-1. For the web app, run `npm run build:site`, the built files will be in the `site/dist/` folder
-2. For the Chrome extension, run `npm run install:extension` then `npm run build:extension`, the built files will be in the `extension/dist/` folder
+#### Web App
+1. run `npm run build:site`, the built files will be in the [site/dist/](./site/dist/) folder
+
+#### Chrome Extension
+1. run `npm run install:extension` (if not already)
+2. run `npm run build:extension`, the built files will be in the [extension/dist/](./extension/dist/) folder
 
 ---
 
