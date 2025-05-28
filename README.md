@@ -3,7 +3,7 @@
 A web app and Chrome extension to quickly generate notes for commenting Urbex (urban exploration) locations.
 
 -   [Live Website](https://urbex-note-generator.vercel.app)
--   [Chrome Extension](https://urbex-note-generator.vercel.app/WIP)
+-   [Chrome Extension](https://chromewebstore.google.com/detail/urbex-note-generator/fponhmoolhcfodfgogjgldhjpioemjkp)
 
 ---
 
@@ -64,7 +64,7 @@ The process may vary depending on your web browser, the extension was designed t
 
 ##### From the Chrome Web Store
 
-1. Go to [the extension page](https://urbex-note-generator.vercel.app/WIP)
+1. Go to [the extension page](https://chromewebstore.google.com/detail/urbex-note-generator/fponhmoolhcfodfgogjgldhjpioemjkp)
 2. Install the extension
 
 ##### From this Repository
