@@ -8,6 +8,16 @@
     color: #fff;
 }
 
+.btn-icon-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+
+    width: 100%;
+}
+
 .btn {
     border-radius: var(--radius);
 

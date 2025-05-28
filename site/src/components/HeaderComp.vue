@@ -2,6 +2,11 @@
     <header>
         <!-- Thème -->
         <ThemeButtonComp id="theme"></ThemeButtonComp>
+
+        <a class="btn btn-normal btn-icon-text" href="https://chromewebstore.google.com/detail/urbex-note-generator/fponhmoolhcfodfgogjgldhjpioemjkp">
+            <span class="material-symbols-outlined">open_in_new</span> 
+            Télécharger l'extension 
+        </a>
     </header>
 </template>
 

@@ -114,16 +114,6 @@
     padding: var(--padding);
 }
 
-.btn-icon-text {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap);
-
-    width: 100%;
-}
-
 @media (max-width: 768px) {
     #json_options {
         grid-template-columns: 1fr;
